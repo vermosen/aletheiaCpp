@@ -42,9 +42,6 @@ namespace db
 		void connect(const std::string & connectionString);
 		boost::shared_ptr<connector> dbConnector();
 
-		virtual bool checkStatus() const = 0;
-		virtual bool rebuild() = 0;
-
 	protected:
 		boost::shared_ptr<connector> connector_;
 		boost::shared_ptr<logger> log_;
