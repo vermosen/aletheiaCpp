@@ -6,10 +6,24 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include <iostream>
-using namespace std;
+#include <mlpack/core.hpp>
+
+using namespace mlpack;
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
-	return 0;
+
+	try
+	{
+		// load data set
+		arma::mat data;
+
+		std::cout << data << std::endl;
+
+		return 0;
+	}
+	catch (std::exception & ex)
+	{
+		std::cerr << ex.what() << std::endl;
+		return 1;
+	}
 }
