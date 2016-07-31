@@ -30,6 +30,11 @@ int main() {
 
 		db->connect("user=postgres password=1234 host=localhost port=5432 dbname=aletheia");
 
+		db::timeSeriesRecordset rs(db->dbConnector(), log);
+
+		timeSeries<double> ts;
+		//= rs.select(idx);
+
 		// load data set
 		arma::mat data;
 
