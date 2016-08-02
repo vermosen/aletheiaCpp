@@ -12,13 +12,13 @@
 
 #include "loggers/consoleLogger.hpp"
 #include "timeSeries.hpp"
-
 #include "database/aletheia.hpp"
 
 using namespace mlpack;
 
-int main() {
+int main(int argc, char *argv[]) {
 
+	std::cout << "hello world" << std::endl;
 	int retVal = 0;
 
 	boost::shared_ptr<logger> log(new loggers::consoleLogger(logger::verbosity::low));
@@ -32,8 +32,9 @@ int main() {
 
 		db::timeSeriesRecordset rs(db->dbConnector(), log);
 
-		timeSeries<double> ts;
-		//= rs.select(idx);
+		std::vector<boost::tuple<long, timeSeries<double> > > recs;
+
+		rs.select(recs, std::string("*"));
 
 		// load data set
 		arma::mat data;

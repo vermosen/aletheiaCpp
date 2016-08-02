@@ -24,7 +24,7 @@ namespace db
 		typedef K keyType;
 		typedef T recordType;
 	public:
-		recordset(boost::shared_ptr<connector> conn, boost::shared_ptr<logger> log) : connector_(conn), log_(log) {}
+		recordset<K, T>(boost::shared_ptr<connector> conn, boost::shared_ptr<logger> log) : connector_(conn), log_(log) {}
 		virtual ~recordset() {};
 
 		// implement crud operations
